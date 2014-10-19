@@ -25,7 +25,7 @@ head(actdata)
 
 In this section, the steps are summed for each date and plot a histogram of the number of steps per day, ignoring the missing values in the original data.
 
-```{r fig.width=5, echo=FALSE}
+```{r fig.width=5}
 sumsteps1 <- aggregate(actdata$steps, by=list(actdata$date), sum)
 hist(sumsteps1$x, breaks = 10, col="blue", xlab="Steps per Day",
         main="Distribution of Steps per Day - original data")
@@ -60,7 +60,7 @@ sumsteps2 <- aggregate(filled$modsteps, by=list(filled$date), sum)
 ```
 The figure below shows a histogram of the average number of steps per day with the modified data.
 
-```{r echo=FALSE}
+```{r}
 hist(sumsteps2$x, breaks = 10, col="blue", xlab="Steps per Day", 
      main="Distribution of Steps per Day - modified data")
 ```
@@ -86,7 +86,7 @@ wkendavg <- aggregate(filled$modsteps[filled$daytype=="Weekend"],
 The plots below show distinct differences between the weekday and weekend activity patterns.  The weekday pattern has one peak early in the day and then falls off to lower levels.  The weekend activity pattern does not have as high a peak as the weekday but remains more constant through the middle of the day.
 
 
-```{r echo=FALSE}
+```{r}
 par(mfrow=c(2,1))
 
 plot(wkdayavg$Group.1, wkdayavg$x, type = "l", main = "Average Daily Activity 
