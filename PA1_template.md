@@ -11,7 +11,7 @@ unzip("activity.zip")
 actdata <- read.csv("activity.csv", header = TRUE,  na.strings = "NA")
 actdata$date <- as.POSIXct(actdata$date)
 ```
-The resulting data frame contains 17568 records of **steps** taken in each time **interval** for each **date** (names of columns in bold). 
+The resulting data frame contains 17568 records of **steps** taken in each time **interval** for each **date** (names of columns in bold). The first row of the data frame are shown below.
 
 
 ```r
@@ -30,7 +30,7 @@ head(actdata)
 
 ## What is mean total number of steps taken per day?
 
-In this section, the steps are summed for each date and plot a histogram of the number of steps per day, ignoring the missing values in the original data.
+In this section, the steps are summed for each date and the resulting summary data frame is used to plot a histogram of the number of steps per day.
 
 
 ```r
